@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <form action="http://localhost:5000/edit" method="POST">
+            <input
+                type="text"
+                name="texto"
+                value="este es un texto de ejemplo... lo leera??"
+            />
+            <button type="submit">Enviar</button>
+        </form> -->
+
+        <script>
+            fetch("http://localhost:5000/edit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ texto: "mi texto llegará??" }),
+            })
+                .then((res) => console.log(res))
+                .catch((err) => console.log(err));
+        </script>
+    </body>
+</html>
